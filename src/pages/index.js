@@ -1,52 +1,24 @@
 import React from 'react'
-import { Link, graphql } from 'gatsby'
-import { GatsbyImage } from 'gatsby-plugin-image'
-import { Container } from 'react-bootstrap'
 
-import Icon from '~components/Icon'
 import Layout from '../components/Layout'
 import S from '../components/seo'
+import Hero from '../components/Hero'
+import About from '../components/About'
+import Culture from '../components/Culture'
+import Quotes from '../components/Quotes'
+import Banner from '../components/Banner'
+import FAQ from '../components/FAQ'
 
-const IndexPage = ({ data: { image } }) => (
+const IndexPage = () => (
   <Layout>
-    <Container>
-      <S title="Home" />
-      <h1>Howdy!</h1>
-      <p>Welcome to your new Gatsby site.</p>
-      <p>Now go build something great.</p>
-      <p>
-        {/* Example of GatsbyImage with blurhash placeholder */}
-        <GatsbyImage
-          image={{
-            ...image.gatsbyImageData,
-            placeholder: {
-              fallback: image.blurHash.base64Image,
-            },
-          }}
-          alt="Gatsby Logo"
-        />
-      </p>
-      <p>
-        {/* Example of sprite icon usage  */}
-        <Icon name="globe" size={60} />
-      </p>
-      <p>
-        <Link to="/page-2">Go to page 2</Link> <br />
-      </p>
-    </Container>
+    <S />
+    <Hero />
+    <About />
+    <Culture />
+    <Quotes />
+    <Banner />
+    <FAQ />
   </Layout>
 )
-
-// Page GraphQL query example
-export const query = graphql`
-  {
-    image: imageSharp {
-      gatsbyImageData(quality: 100, placeholder: NONE)
-      blurHash(width: 100) {
-        base64Image
-      }
-    }
-  }
-`
 
 export default IndexPage

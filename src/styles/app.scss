@@ -45,6 +45,9 @@
 // @import "~bootstrap/scss/print";
 // @import "~bootstrap/scss/images";
 
+@import '../../node_modules/swiper/swiper';
+@import '../../node_modules/swiper/modules/pagination/pagination';
+
 // Components
 @import 'components/base';
 @import 'components/container'; // our custom container

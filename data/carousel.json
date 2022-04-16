@@ -1,0 +1,54 @@
+[
+  {
+    "photo": "./images/carousel/arkhip/photo.png",
+    "title": "Arkhip Kuindzhi",
+    "descr": "<p>Arkhip Kuindzhi born in Mariupol, is known as a talented landscape painter who combines the styles of Impressionism and Romanticism in his works.</p><p>Art critic Louis Edmond Duranty called Kuindzhi <strong>“the most interesting among young artists, who has more original nationality than others.”</strong></p><p>The Kuindzhi Art Museum in Mariupol was destroyed by russian bombs. The museum had housed three of Kuindzhi's works: Red Sunset, Elbrus and Autumn, which were believed to have been removed from the museum but not confirmed.</p>",
+    "images": [
+      "./images/carousel/arkhip/1.png",
+      "./images/carousel/arkhip/2.png",
+      "./images/carousel/arkhip/3.png",
+      "./images/carousel/arkhip/4.png"
+    ]
+  },
+  {
+    "photo": "./images/carousel/maria/photo.png",
+    "title": "Maria Prymachenko",
+    "descr": "<p>Ukrainian folk art painter, who worked in the naïve art style. A self-taught artist, she worked in painting, embroidery and ceramics. The United Nations Educational, Scientific and Cultural Organization (UNESCO) declared that 2009 was the year of Prymachenko.</p><p><strong>“I bow down before the artistic miracle of this brilliant Ukrainian,”</strong> Pablo Picasso, after visiting Maria Prymachenko’s exhibition in Paris</p><p>After the occupation of the village by russian soldiers, burnt out the historic building of Ivankiv Local History Museum, the 19th century. The fate of unique works of Ukrainian folk artist Maria Prymachenko, which were in the museum, at the moment is unknown.</p>",
+    "images": [
+      "./images/carousel/maria/1.png",
+      "./images/carousel/maria/2.png",
+      "./images/carousel/maria/3.png",
+      "./images/carousel/maria/4.png"
+    ]
+  },
+  {
+    "title": "Museum in the village of Parkhomivka",
+    "descr": "<p>Krasnokutsk district, Kharkiv region. One of the best rural art museums in Ukraine, which has a unique collection of art and antiques, among them are works by Picasso, Malevich, Yablonska.</p><p>Museum is under the constant threat of destruction because of artillery shelling.</p>",
+    "images": [
+      "./images/carousel/museum_parkhomivka/1.png",
+      "./images/carousel/museum_parkhomivka/2.png",
+      "./images/carousel/museum_parkhomivka/3.png",
+      "./images/carousel/museum_parkhomivka/4.png"
+    ]
+  },
+  {
+    "title": "Mariupol Drama Theater",
+    "descr": "<p>one of the oldest theaters in the Left Bank of Ukraine. The building was erected in 1956-1960. The theater was the only one in the city, and in recent years has remained the only professional team in the region. During the blockage of Mariupol the theater has become a shelter for more than thousand of people.</p><p>Currently, the theater's premises were destroyed by a direct hit of a high-powered russian bomb dropped on March 16, 2022 during the russian invasion of Ukraine. On the ground in front of the building the word <span>CHILDREN</span> was written.</p>",
+    "images": [
+      "./images/carousel/theater/1.png",
+      "./images/carousel/theater/2.png",
+      "./images/carousel/theater/3.png",
+      "./images/carousel/theater/4.png"
+    ]
+  },
+  {
+    "title": "Museum of Ukrainian Antiquities in Chernihiv",
+    "descr": "<p>The museum was opened in 1902 on the basis of the collection of its patron Vasyl Tarnovsky. Museum funds included archeological findings from Kyivan Rus, rare manuscripts, old prints, paintings. In particular, Tarnovsky had in the collection Taras Shevchenko’s painting \"Catherine\", received as a gift from the author.</p><p>Today, as a result of the russian invasion to Ukraine, the museum buildings have been partially destroyed by Russian shelling.</p>",
+    "images": [
+      "./images/carousel/museum_chernihiv/1.png",
+      "./images/carousel/museum_chernihiv/2.png",
+      "./images/carousel/museum_chernihiv/3.png",
+      "./images/carousel/museum_chernihiv/4.png"
+    ]
+  }
+]

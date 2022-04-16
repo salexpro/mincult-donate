@@ -1,11 +1,15 @@
 const MENU = [
   {
-    name: 'Item 1',
+    name: 'Why donate?',
     link: '#item-1',
   },
   {
-    name: 'Item 2',
+    name: 'FAQ',
     link: '#item-2',
+  },
+  {
+    name: 'Українською',
+    link: '/',
   },
 ]
 

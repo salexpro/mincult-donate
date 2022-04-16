@@ -11,9 +11,9 @@ module.exports = {
   trailingSlash: 'never',
   polyfill: false,
   siteMetadata: {
-    title: `Gatsby Starter`,
-    description: `Description`,
-    domain: process.env.GATSBY_VERCEL_URL || 'starter.min.studio',
+    title: `Save Ukrainian Culture`,
+    description: `Unique Ukrainian culture is an integral part of the world cultural heritage. There are 7 UNESCO World Heritage Sites in Ukraine, while another 17 properties are in the Tentative List of the World Cultural Heritage.`,
+    domain: process.env.GATSBY_VERCEL_URL || 'mincult.salex.pro',
   },
   plugins: [
     // https://www.gatsbyjs.com/plugins/gatsby-plugin-webpack-bundle-analyser-v2/
@@ -28,6 +28,7 @@ module.exports = {
         suffix: rnd(),
       },
     },
+    `gatsby-transformer-json`,
     `gatsby-plugin-image`,
     `gatsby-plugin-sharp`,
     `gatsby-transformer-sharp`,

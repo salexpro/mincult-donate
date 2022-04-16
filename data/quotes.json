@@ -1,0 +1,32 @@
+[
+  {
+    "quote": "The enemy, devoured in their hysterical hatred for Ukraine, attempts to destroy everything. Our past, our present, our future. It is up to us to recover all those things.",
+    "name": "Oleksandr Tkachenko",
+    "position": "Minister of Culture and Information Policy of Ukraine",
+    "photo": "./images/quotes/oleksandr.png"
+  },
+  {
+    "quote": "The astonishing multitude of tech companies, digital platforms, cryptocurrency and NFT communities have already joined their efforts for the sake of Ukrainian culture, its preservation, and future recovery.",
+    "name": "Anastasia Bondar",
+    "position": "Deputy Minister of Culture and Information Policy of Ukraine",
+    "photo": "./images/quotes/anastasia.png"
+  },
+  {
+    "quote": "russia seeks to deny the very existence of Ukrainian culture and art. Therefore, the priority of funding the arts, protection of cultural heritage, and support for artists is not just the requirement of time, but a necessary condition for our future.",
+    "name": "Galyna Grygorenko",
+    "position": "Head of the State Agency of Ukraine for Arts and Artistic Education",
+    "photo": "./images/quotes/galyna.png"
+  },
+  {
+    "quote": "Downtowns in many cities are seriously damaged. Some of them have sites and monuments that date back to the 11th century. It is a whole cultural life that is at risk of disappearing.",
+    "name": "Lazare Eloundou",
+    "position": "UNESCO's World Heritage Director",
+    "photo": "./images/quotes/lazare.png"
+  },
+  {
+    "quote": "We are very concerned about both the situation at the humanitarian and heritage levels. Humanity’s heritage is in danger.",
+    "name": "Ernesto Ottone",
+    "position": "UNESCO’s Assistant Director-General for Culture",
+    "photo": "./images/quotes/ernesto.png"
+  }
+]
