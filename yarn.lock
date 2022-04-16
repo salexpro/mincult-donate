@@ -6749,7 +6749,7 @@ gatsby-telemetry@^3.11.1, gatsby-telemetry@^3.12.1:
     lodash "^4.17.21"
     node-fetch "^2.6.7"
 
-gatsby-transformer-json@^4.12.1:
+gatsby-transformer-json@4.12.1:
   version "4.12.1"
   resolved "https://registry.yarnpkg.com/gatsby-transformer-json/-/gatsby-transformer-json-4.12.1.tgz#ce6978314b1c9e22f90477b068a8b0368783630c"
   integrity sha512-46NsurpbUpL2grlOA+IuG+BS4Di/fvFS7z6KP05IylWjabqe7ZwKhy3zGqqddbtmPS4jwur1HbC8h0CWbRbiIg==
@@ -12002,7 +12002,7 @@ svgo@^2.2.0, svgo@^2.5.0, svgo@^2.7.0, svgo@^2.8.0:
     picocolors "^1.0.0"
     stable "^0.1.8"
 
-swiper@^8.1.1:
+swiper@8.1.1:
   version "8.1.1"
   resolved "https://registry.yarnpkg.com/swiper/-/swiper-8.1.1.tgz#14fa1cb443f03a98c6df8fddce3e16d179b67b3b"
   integrity sha512-Ypx0K79en1Y5EcTy4ArR6E9EP/OwMMY2K0gawl/P27B5PYRiHedFdbdgfyuOFuxSUKsMoSVqFdmKs3DPXYHTdQ==
