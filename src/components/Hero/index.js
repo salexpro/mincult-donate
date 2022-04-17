@@ -10,20 +10,20 @@ import * as s from './Hero.module.scss'
 const Hero = () => {
   return (
     <section className={s.hero}>
-      <Container>
+      <Container className={s.hero__container}>
         <h1>Save Ukrainian Culture</h1>
-        <p>
+        <p className={s.hero__lead}>
           Unique Ukrainian culture is an integral part of the world cultural
           heritage. There are 7 UNESCO World Heritage Sites in Ukraine, while
           another 17 properties are in the Tentative List of the World Cultural
           Heritage.
         </p>
         <div className={s.hero__button}>
-          <Button>
+          <Button variant="secondary">
             Save world heritage
             <Icon name="btc" />
           </Button>
-          Donate via bank transfers, credit cards, and crypto
+          <small>Donate via bank transfers, credit cards, and crypto</small>
         </div>
         <div className={s.hero__powered}>
           <small>The initiative is powered by</small>

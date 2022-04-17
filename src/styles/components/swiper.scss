@@ -1,1 +1,29 @@
-/* stylelint-disable no-empty-source */
+:root {
+  --swiper-pagination-color: #{$teal};
+  // --swiper-pagination-bullet-size: 16px;
+  --swiper-pagination-bullet-width: 16px;
+  --swiper-pagination-bullet-height: 16px;
+  --swiper-pagination-bullet-inactive-color: #{rgba($black, 0.2)};
+  --swiper-pagination-bullet-inactive-opacity: 1;
+  // --swiper-pagination-bullet-opacity: 1;
+  --swiper-pagination-bullet-horizontal-gap: 8px;
+  // --swiper-pagination-bullet-vertical-gap: 6px;
+}
+
+.swiper {
+  padding-bottom: 104px;
+
+  &-pagination {
+    display: grid;
+    grid-auto-flow: column;
+    justify-content: center;
+
+    &.swiper-pagination-horizontal {
+      bottom: 48px;
+    }
+
+    &-bullet {
+      transition: background 1s;
+    }
+  }
+}

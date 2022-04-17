@@ -1,3 +1,62 @@
-/* stylelint-disable block-no-empty */
+@import '~styles/mixins';
+
 .hero {
+  overflow: hidden;
+
+  &::after {
+    display: block;
+    height: 93px;
+    content: '';
+    background-image: url('~img/pattern.svg');
+    background-repeat: repeat-x;
+    background-position: bottom center;
+    background-size: 102px 93px;
+  }
+
+  &__container {
+    position: relative;
+    display: grid;
+    justify-items: center;
+    padding-top: 92px;
+    padding-bottom: 38px;
+    text-align: center;
+
+    &::before,
+    &::after {
+      position: absolute;
+      top: 0;
+      z-index: -1;
+      width: 800px;
+      height: 100%;
+      content: '';
+    }
+
+    &::before {
+      right: calc(50% + 150px + 93px);
+      background-image: url('./img/img-left-min.jpg');
+    }
+
+    &::after {
+      left: calc(50% + 150px + 93px);
+      background-image: url('./img/img-right-min.jpg');
+    }
+  }
+
+  &__lead {
+    max-width: 1100px;
+    margin: 36px auto 0;
+  }
+
+  &__button {
+    display: grid;
+    grid-row-gap: 16px;
+    justify-items: center;
+    margin-top: 52px;
+    margin-bottom: 122px;
+  }
+
+  &__powered {
+    display: grid;
+    grid-row-gap: 18px;
+  }
 }

@@ -1,3 +1,77 @@
-/* stylelint-disable block-no-empty */
+@import '~styles/mixins';
+
 .quotes {
+  padding-top: 48px;
+  padding-bottom: 96px;
+
+  &__masonry {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    column-gap: 40px;
+
+    &::before,
+    &::after {
+      position: absolute;
+      z-index: -1;
+      width: 826px;
+      height: 826px;
+      content: '';
+      background-image: url('~img/sunflower.png');
+      opacity: 0.2;
+    }
+
+    &::before {
+      top: -80px;
+      left: -155px;
+    }
+
+    &::after {
+      right: -17px;
+      bottom: -68px;
+    }
+  }
+
+  &__column {
+    display: grid;
+    grid-row-gap: 40px;
+    align-content: start;
+    // & + & {
+    //   padding-left: 40px;
+    // }
+  }
+}
+
+.quote {
+  padding: 34px 40px 40px;
+  margin: 0;
+  background: $white;
+  border-radius: 20px 20px 80px;
+  box-shadow: 0 30px 80px rgba(0, 0, 0, 9%), 0 12px 24px rgba(0, 0, 0, 5%),
+    0 2px 6px rgba(0, 0, 0, 4%);
+
+  figcaption {
+    display: grid;
+    grid-template-areas:
+      'cite photo'
+      'pos photo';
+    grid-template-columns: 1fr auto;
+    grid-gap: 4px 24px;
+  }
+
+  cite {
+    grid-area: cite;
+    align-self: end;
+  }
+
+  &__position {
+    grid-area: pos;
+    color: $gray-700;
+  }
+
+  &__photo {
+    grid-area: photo;
+    border-radius: 50%;
+    transform: translateZ(0);
+  }
 }

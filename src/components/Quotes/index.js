@@ -2,6 +2,7 @@ import React from 'react'
 import { useStaticQuery, graphql } from 'gatsby'
 import { GatsbyImage } from 'gatsby-plugin-image'
 import { Container } from 'react-bootstrap'
+import Masonry from 'react-masonry-css'
 
 import * as s from './Quotes.module.scss'
 
@@ -31,8 +32,15 @@ const Quotes = () => {
   `)
 
   return (
-    <section className={s.quotes}>
-      <Container>
+    <Container as="section" className={s.quotes}>
+      <Masonry
+        breakpointCols={{
+          default: 2,
+          1023: 1,
+        }}
+        className={s.quotes__masonry}
+        columnClassName={s.quotes__column}
+      >
         {quotes.edges.map(({ node: { quote, name, position, photo } }) => (
           <figure className={s.quote} key={name}>
             <blockquote>
@@ -42,18 +50,19 @@ const Quotes = () => {
               <cite>
                 <h3>{name}</h3>
               </cite>
-              <span>{position}</span>
+              <span className={s.quote__position}>{position}</span>
               {photo && (
                 <GatsbyImage
                   image={photo.childImageSharp.gatsbyImageData}
                   alt={`Photo of ${name}`}
+                  className={s.quote__photo}
                 />
               )}
             </figcaption>
           </figure>
         ))}
-      </Container>
-    </section>
+      </Masonry>
+    </Container>
   )
 }
 

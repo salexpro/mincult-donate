@@ -10,16 +10,16 @@ body {
 
 // Styled scrollbar
 ::-webkit-scrollbar {
-  width: 5px;
+  width: 8px;
   height: 5px;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: $primary;
-  border-radius: 5px;
+  background: $gray-500;
+  border-radius: 3px;
 
   &:hover {
-    background: darken($primary, 10);
+    background: darken($gray-500, 15);
   }
 }
 
@@ -48,4 +48,9 @@ img {
 
 svg {
   display: block;
+}
+
+ul {
+  padding-left: 1.5em;
+  margin-top: 1em;
 }

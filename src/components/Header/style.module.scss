@@ -1,15 +1,28 @@
 @import '~styles/mixins';
 
 .header {
+  position: relative;
   display: grid;
   grid-auto-flow: column;
+  column-gap: 20px;
   align-items: center;
-  justify-content: space-between;
+  // justify-content: space-between;
   padding-top: 40px;
   padding-bottom: 40px;
 
+  &::after {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 100%;
+    max-width: 1240px;
+    content: '';
+    border-bottom: 1px solid $gray-300;
+    transform: translateX(-50%);
+  }
+
   &__logo {
-    justify-self: start;
+    // margin-right: auto;
   }
   @include b-d(sm) {
     // Code...

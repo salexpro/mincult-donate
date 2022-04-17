@@ -6,3 +6,45 @@ button {
   outline: none;
   appearance: none;
 }
+
+.btn {
+  display: grid;
+  grid-auto-flow: column;
+  column-gap: 8px;
+  align-items: center;
+  justify-content: center;
+
+  &-lg {
+    min-width: 360px;
+  }
+
+  &-outline {
+    &-secondary {
+      min-width: 180px;
+      color: $black;
+    }
+
+    &-dark {
+      &:hover,
+      &:focus {
+        color: $black;
+        background: $yellow-lt;
+      }
+    }
+  }
+
+  &-secondary {
+    padding-right: 33px;
+    padding-left: 33px;
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 1.2;
+    box-shadow: 0 3px 8px 0 #50c4c93b;
+
+    &:hover {
+      background: $teal-lt;
+      border-color: $teal-lt;
+      box-shadow: 0 10px 30px 0 #50c4c966;
+    }
+  }
+}

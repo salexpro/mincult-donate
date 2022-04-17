@@ -1,1 +1,41 @@
 // h1, h2, h3, p etc.
+h1,
+h2 {
+  font-feature-settings: 'ordn' on;
+  letter-spacing: -0.02em;
+}
+
+h1 {
+  font-weight: 300;
+  color: $red;
+}
+
+h2 {
+  line-height: 1.2143;
+}
+
+h3 {
+  font-style: normal;
+  font-feature-settings: 'ordn' on, 'salt' on;
+  line-height: 1.3914;
+  color: $red;
+  letter-spacing: -0.01em;
+}
+
+p {
+  font-size: 18px;
+  line-height: 1.4445;
+
+  &:last-child {
+    margin: 0;
+  }
+}
+
+small {
+  font-weight: 400;
+  color: $gray-600;
+}
+
+strong {
+  font-weight: 500;
+}

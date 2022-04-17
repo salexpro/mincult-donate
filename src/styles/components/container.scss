@@ -2,10 +2,11 @@
   /* stylelint-disable-next-line scss/at-extend-no-missing-placeholder */
   @extend .container-fluid;
 
-  max-width: 1240px;
+  max-width: 1320px;
 
   &-fluid {
-    padding: 0 40px;
+    padding-right: 80px;
+    padding-left: 80px;
     margin: auto;
     @include media-breakpoint-down(sm) {
       padding: 0 20px;

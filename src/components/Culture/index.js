@@ -1,10 +1,11 @@
 import React from 'react'
 import { useStaticQuery, graphql } from 'gatsby'
 import { Container } from 'react-bootstrap'
-import { Pagination } from 'swiper'
+import { Autoplay, Pagination } from 'swiper'
 import { Swiper, SwiperSlide } from 'swiper/react'
-
 import { GatsbyImage } from 'gatsby-plugin-image'
+import cn from 'classnames'
+
 import * as s from './Culture.module.scss'
 
 const Culture = () => {
@@ -18,7 +19,7 @@ const Culture = () => {
                 blurHash {
                   base64Image
                 }
-                gatsbyImageData(placeholder: NONE, width: 320, quality: 100)
+                gatsbyImageData(placeholder: NONE, width: 360, quality: 100)
               }
             }
             images {
@@ -39,45 +40,58 @@ const Culture = () => {
 
   return (
     <section className={s.culture}>
-      <Container>
+      <Container className={s.culture__container}>
         <h2>Protect Ukrainian culture, save world heritage</h2>
-        <p>
+        <span className={s.culture__lead}>
           The collected funds will be used for protection, evacuation,
           digitization and preservation of cultural property, support the
           activities of cultural and art institutions, creative industries,
           including media, who were injured, damaged, or destroyed as a result
           of hostilities during the russian aggression against Ukraine.
-        </p>
+        </span>
       </Container>
       <Swiper
-        modules={[Pagination]}
+        modules={[Autoplay, Pagination]}
         spaceBetween={48}
-        slidesPerView={3}
+        slidesPerView="auto"
         centeredSlides
+        speed={2000}
         pagination={{
-          dynamicBullets: true,
+          clickable: true,
+        }}
+        loop
+        autoplay={{
+          delay: 5000,
+          disableOnInteraction: false,
+          pauseOnMouseEnter: true,
         }}
         className={s.carousel}
       >
         {data.allCarouselJson.edges.map(
           ({ node: { title, descr, photo, images } }) => (
             <SwiperSlide className={s.carousel__item} key={title}>
-              {photo && (
-                <GatsbyImage
-                  image={{
-                    ...photo.childImageSharp.gatsbyImageData,
-                    placeholder: {
-                      fallback: photo.childImageSharp.blurHash.base64Image,
-                    },
-                  }}
-                  alt={`Photo of ${title}`}
-                />
-              )}
-              <h3 className="h1">{title}</h3>
-              <div
-                className={s.carousel__descr}
-                dangerouslySetInnerHTML={{ __html: descr }}
-              />
+              <div className={s.carousel__container}>
+                {photo && (
+                  <GatsbyImage
+                    image={{
+                      ...photo.childImageSharp.gatsbyImageData,
+                      placeholder: {
+                        fallback: photo.childImageSharp.blurHash.base64Image,
+                      },
+                    }}
+                    alt={`Photo of ${title}`}
+                    className={s.carousel__photo}
+                  />
+                )}
+                <div className={s.carousel__content}>
+                  <h3 className={cn('h1', s.carousel__header)}>{title}</h3>
+                  <div
+                    className={s.carousel__descr}
+                    dangerouslySetInnerHTML={{ __html: descr }}
+                  />
+                </div>
+              </div>
+
               <div className={s.carousel__images}>
                 {images.map(({ childImageSharp }, i) => (
                   <GatsbyImage
@@ -90,6 +104,7 @@ const Culture = () => {
                       },
                     }}
                     alt={`Image ${i + 1}`}
+                    className={s.carousel__img}
                   />
                 ))}
               </div>
