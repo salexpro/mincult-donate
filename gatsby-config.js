@@ -13,7 +13,7 @@ module.exports = {
   siteMetadata: {
     title: `Save Ukrainian Culture`,
     description: `Unique Ukrainian culture is an integral part of the world cultural heritage. There are 7 UNESCO World Heritage Sites in Ukraine, while another 17 properties are in the Tentative List of the World Cultural Heritage.`,
-    domain: process.env.GATSBY_VERCEL_URL || 'mincult.salex.pro',
+    siteUrl: `https://${process.env.GATSBY_VERCEL_URL || 'mincult.salex.pro'}`,
   },
   plugins: [
     // https://www.gatsbyjs.com/plugins/gatsby-plugin-webpack-bundle-analyser-v2/

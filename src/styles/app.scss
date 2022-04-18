@@ -18,7 +18,7 @@
 // @import "~bootstrap/scss/tables";
 // @import "~bootstrap/scss/forms";
 @import '~bootstrap/scss/buttons';
-// @import "~bootstrap/scss/transitions";
+@import '~bootstrap/scss/transitions';
 // @import "~bootstrap/scss/dropdown";
 // @import "~bootstrap/scss/button-group";
 // @import "~bootstrap/scss/input-group";
@@ -34,9 +34,9 @@
 // @import "~bootstrap/scss/progress";
 // @import "~bootstrap/scss/media";
 // @import "~bootstrap/scss/list-group";
-// @import "~bootstrap/scss/close";
+@import '~bootstrap/scss/close';
 // @import "~bootstrap/scss/toasts";
-// @import "~bootstrap/scss/modal";
+@import '~bootstrap/scss/modal';
 // @import "~bootstrap/scss/tooltip";
 // @import "~bootstrap/scss/popover";
 // @import "~bootstrap/scss/carousel";
@@ -55,6 +55,7 @@
 @import 'components/nav';
 @import 'components/typography';
 @import 'components/swiper';
+@import 'components/modal';
 // @import 'components/dropdown';
 // @import 'components/table';
 // @import 'components/badge';

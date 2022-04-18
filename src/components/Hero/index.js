@@ -1,13 +1,18 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Container, Button } from 'react-bootstrap'
 
 import Icon from '../Icon'
+import DonateModal from '../DonateModal'
 
 import powered from './img/powered.svg'
 
 import * as s from './Hero.module.scss'
 
 const Hero = () => {
+  const [modalShow, setModalShow] = useState(null)
+
+  const handleDonate = () => setModalShow(true)
+
   return (
     <section className={s.hero}>
       <Container className={s.hero__container}>
@@ -19,7 +24,7 @@ const Hero = () => {
           Heritage.
         </p>
         <div className={s.hero__button}>
-          <Button variant="secondary">
+          <Button variant="secondary" onClick={handleDonate}>
             Save world heritage
             <Icon name="btc" />
           </Button>
@@ -33,6 +38,7 @@ const Hero = () => {
           />
         </div>
       </Container>
+      <DonateModal show={modalShow} onHide={() => setModalShow(false)} />
     </section>
   )
 }

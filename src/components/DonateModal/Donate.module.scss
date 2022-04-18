@@ -1,0 +1,121 @@
+@import '~styles/mixins';
+
+.donate {
+  display: grid;
+  grid-row-gap: 36px;
+
+  h3 {
+    text-align: center;
+  }
+
+  &__cards {
+    text-align: center;
+  }
+
+  &__buttons {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-column-gap: 16px;
+    margin: 24px 0;
+  }
+}
+
+.tokens {
+  display: grid;
+  grid-row-gap: 16px;
+  padding: 0;
+  margin: 26px 0 0;
+  list-style: none;
+}
+
+.token {
+  position: relative;
+  display: grid;
+  grid-auto-flow: column;
+  grid-column-gap: 20px;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 48px;
+  padding: 12px 16px 12px 12px;
+  background: $gray-100;
+  border-radius: 12px;
+  transition: 300ms cubic-bezier(0.25, 0.46, 0.45, 0.94);
+
+  &:hover,
+  &:focus {
+    box-shadow: inset 0 0 0 2px $secondary;
+
+    .copy {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+
+  &__symbol {
+    display: grid;
+    grid-auto-flow: column;
+    column-gap: 8px;
+    align-items: center;
+    color: $gray-700;
+    text-transform: uppercase;
+  }
+
+  &__wallet {
+    letter-spacing: 0.04em;
+  }
+}
+
+/* stylelint-disable-next-line no-descending-specificity */
+.copy {
+  position: absolute;
+  top: 4px;
+  right: 4px;
+  display: grid;
+  grid-auto-flow: column;
+  grid-column-gap: 10px;
+  padding: 8px 10px;
+  background-color: $gray-200;
+  border-radius: 8px;
+  opacity: 0;
+  transition: 300ms;
+  transform: translateX(5px);
+}
+
+.tabs {
+  margin-top: 26px;
+  background: $gray-100;
+  border-radius: 12px;
+
+  &__buttons {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    padding: 0;
+    margin: 0;
+    list-style: none;
+  }
+
+  &__button {
+    display: grid;
+    grid-auto-flow: column;
+    grid-column-gap: 16px;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    padding: 16px;
+    font-weight: 300;
+    color: $gray-700;
+    text-transform: uppercase;
+    box-shadow: inset 0 -1px $gray-300;
+    transition: 300ms;
+
+    &.active {
+      color: $black;
+      box-shadow: inset 0 -2px $secondary;
+    }
+  }
+
+  &__content {
+    padding: 20px 24px;
+    white-space: pre-line;
+  }
+}

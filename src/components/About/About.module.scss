@@ -26,7 +26,8 @@
       transform: translate(-50%, -50%);
     }
 
-    &:hover {
+    &:hover,
+    &:focus {
       &::after {
         transform: translate(-50%, -50%) scale(1.2);
       }
@@ -40,6 +41,20 @@
 
     > div {
       z-index: -1;
+    }
+  }
+
+  &__modal {
+    position: relative;
+    padding-top: 56.22%;
+    overflow: hidden;
+
+    iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
     }
   }
 }

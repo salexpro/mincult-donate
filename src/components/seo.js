@@ -20,7 +20,7 @@ const SEO = ({ description, lang, meta, title, image }) => {
           siteMetadata {
             title
             description
-            domain
+            siteUrl
           }
         }
       }
@@ -29,7 +29,7 @@ const SEO = ({ description, lang, meta, title, image }) => {
 
   const metaDescription = description || site.siteMetadata.description
   const defaultTitle = site.siteMetadata?.title
-  const domain = site.siteMetadata?.domain
+  const siteUrl = site.siteMetadata?.siteUrl
   const titleTemplate = title ? `${title} – ${defaultTitle}` : defaultTitle
 
   return (
@@ -57,7 +57,7 @@ const SEO = ({ description, lang, meta, title, image }) => {
         },
         {
           property: `og:image`,
-          content: `https://${domain}${ogImage || image}`,
+          content: `${siteUrl}${ogImage || image}`,
         },
         {
           property: `og:width`,

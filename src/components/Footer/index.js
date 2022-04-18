@@ -1,11 +1,16 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Container, Button } from 'react-bootstrap'
 
 import Icon from '../Icon'
+import DonateModal from '../DonateModal'
 
 import * as s from './style.module.scss'
 
 const Footer = () => {
+  const [modalShow, setModalShow] = useState(null)
+
+  const handleDonate = () => setModalShow(true)
+
   const currentYear = new Date().getFullYear()
 
   return (
@@ -16,7 +21,7 @@ const Footer = () => {
           Help salvage Ukrainian holdings and ensure they are renovated once the
           war is over. Make a donation today
         </p>
-        <Button variant="secondary">
+        <Button variant="secondary" onClick={handleDonate}>
           Save world heritage
           <Icon name="btc" />
         </Button>
@@ -52,6 +57,7 @@ const Footer = () => {
           </li>
         </ul>
       </Container>
+      <DonateModal show={modalShow} onHide={() => setModalShow(false)} />
     </footer>
   )
 }

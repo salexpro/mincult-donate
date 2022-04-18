@@ -3,7 +3,7 @@
 .header {
   position: relative;
   display: grid;
-  grid-auto-flow: column;
+  grid-template-columns: auto 1fr auto;
   column-gap: 20px;
   align-items: center;
   // justify-content: space-between;
