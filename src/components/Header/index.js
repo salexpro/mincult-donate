@@ -17,7 +17,7 @@ const Header = ({ siteTitle }) => {
   return (
     <Container as="header" className={s.header}>
       <div className={s.header__logo}>
-        <img src={logo} alt={siteTitle} />
+        <img width="453" height="58" src={logo} alt={siteTitle} />
       </div>
       <Menu />
       <div className={s.header__button}>

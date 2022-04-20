@@ -33,12 +33,12 @@
 
     &::before {
       right: calc(50% + 150px + 93px);
-      background-image: url('./img/img-left-min.jpg');
+      background-image: url('~img/building-left-min.jpg');
     }
 
     &::after {
       left: calc(50% + 150px + 93px);
-      background-image: url('./img/img-right-min.jpg');
+      background-image: url('~img/building-right-min.jpg');
     }
   }
 

@@ -1,7 +1,7 @@
 import React from 'react'
 import { useStaticQuery, graphql } from 'gatsby'
 import { Container } from 'react-bootstrap'
-import { Autoplay, Pagination } from 'swiper'
+import { Autoplay, Pagination, Navigation } from 'swiper'
 import { Swiper, SwiperSlide } from 'swiper/react'
 import { GatsbyImage } from 'gatsby-plugin-image'
 import cn from 'classnames'
@@ -51,7 +51,7 @@ const Culture = () => {
         </span>
       </Container>
       <Swiper
-        modules={[Autoplay, Pagination]}
+        modules={[Autoplay, Navigation, Pagination]}
         spaceBetween={48}
         slidesPerView="auto"
         centeredSlides
@@ -59,12 +59,15 @@ const Culture = () => {
         pagination={{
           clickable: true,
         }}
-        loop
+        // loop
+        rewind
         autoplay={{
           delay: 5000,
           disableOnInteraction: false,
           pauseOnMouseEnter: true,
         }}
+        navigation
+        initialSlide={1}
         className={s.carousel}
       >
         {data.allCarouselJson.edges.map(
@@ -111,6 +114,7 @@ const Culture = () => {
             </SwiperSlide>
           )
         )}
+        button
       </Swiper>
     </section>
   )

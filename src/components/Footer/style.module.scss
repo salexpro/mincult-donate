@@ -1,6 +1,8 @@
 @import '~styles/mixins';
 
 .footer {
+  overflow: hidden;
+
   &::before {
     display: block;
     height: 93px;
@@ -22,24 +24,21 @@
     &::before,
     &::after {
       position: absolute;
-      bottom: 0;
+      top: 0;
       z-index: -1;
+      width: 800px;
+      height: 100%;
       content: '';
-      background-image: url('./img/sunflower-min.jpg');
-      background-size: cover;
     }
 
     &::before {
-      right: calc(50% + 150px + 24px);
-      width: 448px;
-      height: 342px;
+      right: calc(50% + 150px + 93px);
+      background-image: url('~img/building-left-min.jpg');
     }
 
     &::after {
-      left: calc(50% + 150px + 20px);
-      width: 412px;
-      height: 298px;
-      transform: scaleX(-1);
+      left: calc(50% + 150px + 93px);
+      background-image: url('~img/building-right-min.jpg');
     }
   }
 

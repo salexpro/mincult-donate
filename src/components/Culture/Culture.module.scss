@@ -44,39 +44,6 @@
   // position: relative;
   overflow: visible;
 
-  &::before,
-  &::after {
-    position: absolute;
-    bottom: 0;
-    z-index: 3;
-    width: 300px;
-    height: 120%;
-    content: '';
-    background: linear-gradient(
-      270deg,
-      $white 0%,
-      rgba($white, 90%) 28.13%,
-      rgba($white, 50%) 68.75%,
-      rgba($white, 0%) 100%
-    );
-  }
-
-  &::before {
-    left: 0;
-    @include b-d(xxxl) {
-      left: -176px;
-    }
-
-    transform: scaleX(-1);
-  }
-
-  &::after {
-    right: 0;
-    @include b-d(xxxl) {
-      right: -176px;
-    }
-  }
-
   &__item {
     width: 100%;
     max-width: 1160px;

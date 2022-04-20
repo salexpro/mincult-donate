@@ -33,6 +33,8 @@ const Hero = () => {
         <div className={s.hero__powered}>
           <small>The initiative is powered by</small>
           <img
+            width="864"
+            height="44"
             src={powered}
             alt="Ministry of Culture ⨯ Держмистецтв ⨯ Everstake"
           />
