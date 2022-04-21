@@ -1,6 +1,5 @@
 const DATA = {
   cards: {
-    header: 'Credit Cards',
     currs: [
       {
         symbol: 'USD',
@@ -14,7 +13,6 @@ const DATA = {
     ],
   },
   crypto: {
-    header: 'Сrypto',
     currs: [
       {
         token: 'btc',
@@ -37,7 +35,6 @@ const DATA = {
     ],
   },
   bank: {
-    header: 'Bank Transfer',
     currs: [
       {
         label: 'UAH',

@@ -1,5 +1,7 @@
+/* eslint-disable jsx-a11y/anchor-has-content, jsx-a11y/control-has-associated-label */
 import React, { useState } from 'react'
 import { Container, Button } from 'react-bootstrap'
+import { Trans, useTranslation } from 'react-i18next'
 
 import Icon from '../Icon'
 import DonateModal from '../DonateModal'
@@ -13,21 +15,18 @@ const Footer = () => {
 
   const currentYear = new Date().getFullYear()
 
+  const { t } = useTranslation('footer')
+
   return (
     <footer className={s.footer}>
       <Container className={s.footer__top}>
-        <h2 className="h1">Help Save Ukrainian Culture</h2>
-        <p className={s.footer__lead}>
-          Help salvage Ukrainian holdings and ensure they are renovated once the
-          war is over. Make a donation today
-        </p>
+        <h2 className="h1">{t('header')}</h2>
+        <p className={s.footer__lead}>{t('lead')}</p>
         <Button variant="secondary" onClick={handleDonate}>
-          Save world heritage
+          {t('buttons.save', { ns: 'base' })}
           <Icon name="btc" />
         </Button>
-        <small className={s.footer__hint}>
-          Donate via bank transfers, credit cards, and crypto
-        </small>
+        <small className={s.footer__hint}>{t('hint', { ns: 'base' })}</small>
       </Container>
 
       <Container className={s.footer__bottom}>
@@ -38,22 +37,40 @@ const Footer = () => {
         </div>
         <ul className={s.footer__menu}>
           <li>
-            © {currentYear} Powered by{' '}
-            <a href="https://everstake.one" target="_blank" rel="noreferrer">
-              Everstake
-            </a>
+            © {currentYear}{' '}
+            <Trans
+              t={t}
+              i18nKey="powered"
+              components={[
+                <a
+                  href="https://everstake.one"
+                  target="_blank"
+                  rel="noreferrer"
+                />,
+              ]}
+            />
           </li>
           <li>
-            Development by{' '}
-            <a href="https://salex.pro" target="_blank" rel="noreferrer">
-              Oleksandr Pupko
-            </a>
+            <Trans
+              t={t}
+              i18nKey="dev"
+              components={[
+                <a href="https://salex.pro" target="_blank" rel="noreferrer" />,
+              ]}
+            />
           </li>
           <li>
-            Design by{' '}
-            <a href="https://dnlv.design" target="_blank" rel="noreferrer">
-              Andrew Danilov
-            </a>
+            <Trans
+              t={t}
+              i18nKey="design"
+              components={[
+                <a
+                  href="https://dnlv.design"
+                  target="_blank"
+                  rel="noreferrer"
+                />,
+              ]}
+            />
           </li>
         </ul>
       </Container>

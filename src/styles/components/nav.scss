@@ -1,6 +1,8 @@
 .nav {
+  flex-wrap: nowrap;
   justify-self: end;
   margin: 0;
+  white-space: nowrap;
 
   &--header {
     @include b-d(xl) {

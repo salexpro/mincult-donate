@@ -1,5 +1,7 @@
+/* eslint-disable jsx-a11y/anchor-has-content, jsx-a11y/control-has-associated-label */
 import React, { useState } from 'react'
 import { Container, Button } from 'react-bootstrap'
+import { Trans, useTranslation } from 'react-i18next'
 
 import Icon from '../Icon'
 import DonateModal from '../DonateModal'
@@ -9,6 +11,8 @@ import powered from './img/powered.svg'
 import * as s from './Hero.module.scss'
 
 const Hero = () => {
+  const { t } = useTranslation(['hero', 'base'])
+
   const [modalShow, setModalShow] = useState(null)
 
   const handleDonate = () => setModalShow(true)
@@ -16,37 +20,40 @@ const Hero = () => {
   return (
     <section className={s.hero}>
       <Container className={s.hero__container}>
-        <h1>Save Ukrainian Culture</h1>
-        <p className={s.hero__lead}>
-          Unique Ukrainian culture is an integral part of the world cultural
-          heritage. There are 7 UNESCO World Heritage Sites in Ukraine, while
-          another 17 properties are in the Tentative List of the World Cultural
-          Heritage.
-        </p>
+        <h1>{t('header')}</h1>
+        <p className={s.hero__lead}>{t('lead')}</p>
         <div className={s.hero__button}>
           <Button variant="secondary" onClick={handleDonate}>
-            Save world heritage
+            {t('buttons.save', { ns: 'base' })}
             <Icon name="btc" />
           </Button>
-          <small>Donate via bank transfers, credit cards, and crypto</small>
+          <small>{t('hint', { ns: 'base' })}</small>
         </div>
         <div className={s.hero__powered}>
           <small>
-            The initiative is powered by
+            {t('powered.0')}{' '}
             <span>
-              {' '}
-              the{' '}
-              <a href="https://mkip.gov.ua/" target="_blank" rel="noreferrer">
-                Ministry of Culture and Information Policy of Ukraine
-              </a>
-              , the {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
-              <a href="#" target="_blank">
-                State Agency of Ukraine for Arts and Artistic Education
-              </a>
-              , and{' '}
-              <a href="https://everstake.one" target="_blank" rel="noreferrer">
-                Everstake
-              </a>
+              <Trans
+                t={t}
+                i18nKey="powered.1"
+                components={[
+                  <a
+                    href="https://mkip.gov.ua"
+                    target="_blank"
+                    rel="noreferrer"
+                  />,
+                  <a
+                    href="https://arts.gov.ua"
+                    target="_blank"
+                    rel="noreferrer"
+                  />,
+                  <a
+                    href="https://everstake.one"
+                    target="_blank"
+                    rel="noreferrer"
+                  />,
+                ]}
+              />
             </span>
           </small>
           <img

@@ -3,18 +3,19 @@ import { useStaticQuery, graphql } from 'gatsby'
 import { GatsbyImage } from 'gatsby-plugin-image'
 import { Container } from 'react-bootstrap'
 import Masonry from 'react-masonry-css'
+import { useTranslation } from 'react-i18next'
 
 import * as s from './Quotes.module.scss'
 
 const Quotes = () => {
+  const { t } = useTranslation('quotes')
+
   const { quotes } = useStaticQuery(graphql`
     {
       quotes: allQuotesJson {
         edges {
           node {
-            name
-            position
-            quote
+            key
             photo {
               childImageSharp {
                 gatsbyImageData(
@@ -41,20 +42,20 @@ const Quotes = () => {
         className={s.quotes__masonry}
         columnClassName={s.quotes__column}
       >
-        {quotes.edges.map(({ node: { quote, name, position, photo } }) => (
-          <figure className={s.quote} key={name}>
+        {quotes.edges.map(({ node: { key, photo } }) => (
+          <figure className={s.quote} key={key}>
             <blockquote>
-              <p>{quote}</p>
+              <p>{t(`${key}.quote`)}</p>
             </blockquote>
             <figcaption>
               <cite>
-                <h3>{name}</h3>
+                <h3>{t(`${key}.name`)}</h3>
               </cite>
-              <span className={s.quote__position}>{position}</span>
+              <span className={s.quote__position}>{t(`${key}.position`)}</span>
               {photo && (
                 <GatsbyImage
                   image={photo.childImageSharp.gatsbyImageData}
-                  alt={`Photo of ${name}`}
+                  alt={`Photo of ${t(`${key}.name`)}`}
                   className={s.quote__photo}
                 />
               )}

@@ -91,9 +91,10 @@
   }
 
   &__wallet {
-    overflow: hidden;
     letter-spacing: 0.04em;
-
+    @include b-up(md) {
+      overflow: hidden;
+    }
     @include b-d(md) {
       > div {
         word-break: break-all !important;

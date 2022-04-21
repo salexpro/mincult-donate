@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import { Container, Button, Offcanvas } from 'react-bootstrap'
 import PropTypes from 'prop-types'
 import cn from 'classnames'
+import { useTranslation } from 'react-i18next'
 
 import Menu from '~components/Menu'
 import DonateModal from '../DonateModal'
@@ -12,6 +13,8 @@ import logo from './img/logo.svg'
 import mcip from './img/mcip.svg'
 
 const Header = ({ siteTitle }) => {
+  const { t } = useTranslation('base')
+
   const [isMenuOpen, setMenuOpen] = useState(null)
 
   const handleMenu = () => setMenuOpen((prev) => !prev)
@@ -42,7 +45,7 @@ const Header = ({ siteTitle }) => {
         <Menu variant="header" />
         <div className={s.header__button}>
           <Button variant="outline-secondary" onClick={handleDonate}>
-            Donate now
+            {t('buttons.donate')}
           </Button>
         </div>
         <button
@@ -78,7 +81,7 @@ const Header = ({ siteTitle }) => {
         <Offcanvas.Body>
           <Menu handleClose={handleMenu} variant="dropdown" />
           <Button variant="outline-secondary" onClick={handleDonate}>
-            Donate now
+            {t('buttons.donate')}
           </Button>
         </Offcanvas.Body>
       </Offcanvas>

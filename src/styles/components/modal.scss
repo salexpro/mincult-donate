@@ -19,6 +19,13 @@
     }
   }
 
+  &-title {
+    @include b-up(md) {
+      text-align: center;
+      white-space: pre-line;
+    }
+  }
+
   &-header {
     justify-content: center;
 

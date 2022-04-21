@@ -5,15 +5,19 @@ import { Autoplay, Pagination, Navigation } from 'swiper'
 import { Swiper, SwiperSlide } from 'swiper/react'
 import { GatsbyImage } from 'gatsby-plugin-image'
 import cn from 'classnames'
+import { useTranslation, Trans } from 'react-i18next'
 
 import * as s from './Culture.module.scss'
 
 const Culture = () => {
+  const { t } = useTranslation('culture')
+
   const data = useStaticQuery(graphql`
     {
       allCarouselJson {
         edges {
           node {
+            key
             photo {
               childImageSharp {
                 blurHash {
@@ -30,8 +34,6 @@ const Culture = () => {
                 gatsbyImageData(placeholder: NONE, height: 240, quality: 100)
               }
             }
-            descr
-            title
           }
         }
       }
@@ -41,14 +43,8 @@ const Culture = () => {
   return (
     <section className={s.culture}>
       <Container className={s.culture__container}>
-        <h2>Protect Ukrainian culture, save world heritage</h2>
-        <span className={s.culture__lead}>
-          The collected funds will be used for protection, evacuation,
-          digitization and preservation of cultural property, support the
-          activities of cultural and art institutions, creative industries,
-          including media, who were injured, damaged, or destroyed as a result
-          of hostilities during the russian aggression against Ukraine.
-        </span>
+        <h2>{t('header')}</h2>
+        <span className={s.culture__lead}>{t('lead')}</span>
       </Container>
       <Swiper
         modules={[Autoplay, Navigation, Pagination]}
@@ -82,48 +78,59 @@ const Culture = () => {
         }}
         className={s.carousel}
       >
-        {data.allCarouselJson.edges.map(
-          ({ node: { title, descr, photo, images } }) => (
-            <SwiperSlide className={s.carousel__item} key={title}>
-              <div className={cn(s.carousel__content, { [s.photo]: photo })}>
-                {photo && (
-                  <GatsbyImage
-                    image={{
-                      ...photo.childImageSharp.gatsbyImageData,
-                      placeholder: {
-                        fallback: photo.childImageSharp.blurHash.base64Image,
-                      },
-                    }}
-                    alt={`Photo of ${title}`}
-                    className={s.carousel__photo}
-                  />
-                )}
-                <h3 className={cn('h1', s.carousel__header)}>{title}</h3>
-                <div
-                  className={s.carousel__descr}
-                  dangerouslySetInnerHTML={{ __html: descr }}
+        {data.allCarouselJson.edges.map(({ node: { key, photo, images } }) => (
+          <SwiperSlide className={s.carousel__item} key={key}>
+            <div className={cn(s.carousel__content, { [s.photo]: photo })}>
+              {photo && (
+                <GatsbyImage
+                  image={{
+                    ...photo.childImageSharp.gatsbyImageData,
+                    placeholder: {
+                      fallback: photo.childImageSharp.blurHash.base64Image,
+                    },
+                  }}
+                  alt={`Photo of ${t(`carousel.${key}.title`)}`}
+                  className={s.carousel__photo}
                 />
-              </div>
-
-              <div className={s.carousel__images}>
-                {images.map(({ childImageSharp }, i) => (
-                  <GatsbyImage
+              )}
+              <h3
+                className={cn('h1', s.carousel__header)}
+                dangerouslySetInnerHTML={{ __html: t(`carousel.${key}.title`) }}
+              />
+              <div className={s.carousel__descr}>
+                {t(`carousel.${key}.descr`, { returnObjects: true }).map(
+                  (p, i) => (
                     // eslint-disable-next-line react/no-array-index-key
-                    key={`img${i}`}
-                    image={{
-                      ...childImageSharp.gatsbyImageData,
-                      placeholder: {
-                        fallback: childImageSharp.blurHash.base64Image,
-                      },
-                    }}
-                    alt={`Image ${i + 1}`}
-                    className={s.carousel__img}
-                  />
-                ))}
+                    <p key={`p${i}`}>
+                      <Trans
+                        t={t}
+                        i18nKey={`carousel.${key}.descr.${i}`}
+                        components={[<strong />, <span />]}
+                      />
+                    </p>
+                  )
+                )}
               </div>
-            </SwiperSlide>
-          )
-        )}
+            </div>
+
+            <div className={s.carousel__images}>
+              {images.map(({ childImageSharp }, i) => (
+                <GatsbyImage
+                  // eslint-disable-next-line react/no-array-index-key
+                  key={`img${i}`}
+                  image={{
+                    ...childImageSharp.gatsbyImageData,
+                    placeholder: {
+                      fallback: childImageSharp.blurHash.base64Image,
+                    },
+                  }}
+                  alt={`Image ${i + 1}`}
+                  className={s.carousel__img}
+                />
+              ))}
+            </div>
+          </SwiperSlide>
+        ))}
       </Swiper>
     </section>
   )

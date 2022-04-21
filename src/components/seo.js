@@ -9,6 +9,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { Helmet } from 'react-helmet'
 import { useStaticQuery, graphql } from 'gatsby'
+import { useTranslation } from 'react-i18next'
 
 import ogImage from '~img/og-image.jpg'
 
@@ -19,7 +20,6 @@ const SEO = ({ description, lang, meta, title, image }) => {
         site {
           siteMetadata {
             title
-            description
             siteUrl
           }
         }
@@ -27,8 +27,10 @@ const SEO = ({ description, lang, meta, title, image }) => {
     `
   )
 
-  const metaDescription = description || site.siteMetadata.description
-  const defaultTitle = site.siteMetadata?.title
+  const { t } = useTranslation('base')
+
+  const metaDescription = description || t('meta.description')
+  const defaultTitle = t('meta.title') || site.siteMetadata?.title
   const siteUrl = site.siteMetadata?.siteUrl
   const titleTemplate = title ? `${title} – ${defaultTitle}` : defaultTitle
 

@@ -2,6 +2,8 @@ import React, { useState } from 'react'
 import { useStaticQuery, graphql } from 'gatsby'
 import { Container, Modal } from 'react-bootstrap'
 import { StaticImage } from 'gatsby-plugin-image'
+import { useTranslation } from 'react-i18next'
+
 import * as s from './About.module.scss'
 
 import cover from './img/cover-min.jpg'
@@ -16,6 +18,8 @@ const About = () => {
       }
     }
   `)
+
+  const { t } = useTranslation('about')
 
   const [modalShow, setModalShow] = useState(null)
 
@@ -34,25 +38,14 @@ const About = () => {
           />
         </button>
         <div className={s.about__content}>
-          Ukrainian culture has a thousand-year history. russia&apos;s
-          full-scale invasion on the sovereign territory of peaceful Ukraine
-          brings more and more devastation to the world cultural heritage and
-          landmarks each day.
+          {t('content.0')}
           <ul>
-            <li>
-              UNESCO World Heritage sites in Ukraine are at risk of destruction.
-            </li>
-            <li>
-              More than 200 objects of intangible cultural heritage in Ukraine
-              were severely damaged or destroyed. Among them there are museums,
-              theaters, natural reserves, ancient monuments, and libraries.
-            </li>
-            <li>
-              Thousands of art pieces have been damaged by russian bombing.
-            </li>
+            {t('content.1', { returnObjects: true }).map((li, i) => (
+              // eslint-disable-next-line react/no-array-index-key
+              <li key={`li${i}`}>{li}</li>
+            ))}
           </ul>
-          Help to save Ukrainian artistic and cultural objects and ensure they
-          will be renovated once the war is over. Make a donation today.
+          {t('content.2')}
         </div>
       </Container>
       <Modal

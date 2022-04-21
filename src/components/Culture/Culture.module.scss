@@ -164,6 +164,11 @@
 
   &__descr {
     grid-area: descr;
+    color: $black;
+
+    span {
+      color: $primary;
+    }
   }
 
   &__images {

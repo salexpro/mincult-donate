@@ -12,7 +12,6 @@ module.exports = {
   polyfill: false,
   siteMetadata: {
     title: `Save Ukrainian Culture`,
-    description: `Unique Ukrainian culture is an integral part of the world cultural heritage. There are 7 UNESCO World Heritage Sites in Ukraine, while another 17 properties are in the Tentative List of the World Cultural Heritage.`,
     siteUrl: `https://${process.env.GATSBY_VERCEL_URL || 'mincult.salex.pro'}`,
   },
   plugins: [
@@ -37,6 +36,32 @@ module.exports = {
       resolve: `gatsby-source-filesystem`,
       options: {
         path: `${__dirname}/data`,
+      },
+    },
+    {
+      resolve: `gatsby-theme-i18n`,
+      options: {
+        defaultLang: `ua`,
+        // locales: process.env.LOCALES || `ru ua`,
+        configPath: require.resolve(`./i18n/config.json`),
+      },
+    },
+    {
+      resolve: `gatsby-theme-i18n-react-i18next`,
+      options: {
+        locales: `./i18n/react-i18next`,
+        i18nextOptions: {
+          ns: [
+            'base',
+            'hero',
+            'about',
+            'culture',
+            'quotes',
+            'faq',
+            'footer',
+            'donate',
+          ],
+        },
       },
     },
     {

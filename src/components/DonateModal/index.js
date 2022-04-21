@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import { Button, Modal } from 'react-bootstrap'
 import cn from 'classnames'
 import MiddleEllipsis from 'react-middle-ellipsis'
+import { useTranslation } from 'react-i18next'
 
 import Icon from '../Icon'
 
@@ -12,6 +13,8 @@ import * as s from './Donate.module.scss'
 
 const DonateModal = (props) => {
   const { cards, crypto, bank } = DATA
+
+  const { t } = useTranslation('donate')
 
   const [copied, setCopied] = useState(null)
 
@@ -39,11 +42,11 @@ const DonateModal = (props) => {
   return (
     <Modal {...props} fullscreen="md-down" restoreFocus={false} centered>
       <Modal.Header closeButton>
-        <Modal.Title as="h2">Donate to save culture</Modal.Title>
+        <Modal.Title as="h2">{t('header')}</Modal.Title>
       </Modal.Header>
       <Modal.Body className={s.donate}>
         <div className={s.donate__cards}>
-          <h3>{cards.header}</h3>
+          <h3>{t('cards')}</h3>
           <div className={s.donate__buttons}>
             {cards.currs.map(({ symbol, link }) => (
               <Button
@@ -62,7 +65,7 @@ const DonateModal = (props) => {
           />
         </div>
         <div className={s.donate__crypto}>
-          <h3>{crypto.header}</h3>
+          <h3>{t('crypto')}</h3>
           <ul className={s.tokens}>
             {crypto.currs.map((curr) => {
               const { token, type, wallet } = curr
@@ -85,7 +88,7 @@ const DonateModal = (props) => {
                     onClick={() => handleCopy(curr)}
                   >
                     <Icon name={copied === curr ? 'check' : 'copy'} />
-                    <span>Copy address</span>
+                    <span>{t('copy')}</span>
                   </button>
                 </li>
               )
@@ -93,7 +96,7 @@ const DonateModal = (props) => {
           </ul>
         </div>
         <div className={s.donate__bank}>
-          <h3>{bank.header}</h3>
+          <h3>{t('bank')}</h3>
           <div className={s.tabs}>
             <ul className={s.tabs__buttons}>
               {bank.currs.map(({ symbol, size, label, account }) => (

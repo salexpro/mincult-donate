@@ -1,0 +1,18 @@
+[
+  {
+    "code": "ua",
+    "hrefLang": "uk-UA",
+    "name": "Ukrainian",
+    "localName": "Українською",
+    "langDir": "ltr",
+    "dateFormat": "DD.MM.YYYY"
+  },
+  {
+    "code": "en",
+    "hrefLang": "en-US",
+    "name": "English",
+    "localName": "in English",
+    "langDir": "ltr",
+    "dateFormat": "MM/DD/YYYY"
+  }
+]

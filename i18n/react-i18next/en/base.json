@@ -1,0 +1,15 @@
+{
+  "meta": {
+    "title": "Save Ukrainian Culture",
+    "description": "Unique Ukrainian culture is an integral part of the world cultural heritage. There are 7 UNESCO World Heritage Sites in Ukraine, while another 17 properties are in the Tentative List of the World Cultural Heritage."
+  },
+  "menu": {
+    "donate": "Why donate?",
+    "faq": "FAQ"
+  },
+  "buttons": {
+    "donate": "Donate now",
+    "save": "Save world heritage"
+  },
+  "hint": "Donate via bank transfers, credit cards, and crypto"
+}
