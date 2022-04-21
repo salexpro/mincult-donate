@@ -8,10 +8,28 @@
     position: relative;
     z-index: 1;
     display: grid;
-    grid-auto-flow: column;
-    grid-column-gap: 70px;
+    grid-column-gap: 40px;
     align-items: center;
     padding: 50px 0 54px;
+
+    @include b-d(xl) {
+      padding: 55px 0 58px;
+    }
+
+    @include b-up(lg) {
+      grid-auto-flow: column;
+    }
+
+    @include b-d(lg) {
+      justify-items: center;
+      text-align: center;
+    }
+
+    @include b-d(md) {
+      padding-top: 50px;
+      padding-bottom: 60px;
+      text-align: left;
+    }
 
     &::before,
     &::after {
@@ -30,6 +48,18 @@
       width: 680px;
       height: 680px;
       transform: rotate(-176.36deg);
+      @include b-d(xl) {
+        left: -220px;
+      }
+      @include b-d(lg) {
+        bottom: -20px;
+      }
+      @include b-d(md) {
+        bottom: 180px;
+        left: -110px;
+        width: 375px;
+        height: 375px;
+      }
     }
 
     &::after {
@@ -37,14 +67,36 @@
       right: -160px;
       width: 962px;
       height: 962px;
+      @include b-d(xl) {
+        right: -322px;
+      }
+      @include b-d(lg) {
+        right: -562px;
+      }
+      @include b-d(md) {
+        top: 93px;
+        right: -160px;
+        width: 530px;
+        height: 530px;
+      }
     }
   }
 
   &__content {
+    @include b-d(lg) {
+      margin-bottom: 33px;
+    }
+
     span {
       display: block;
       max-width: 740px;
       margin-top: 35px;
+      @include b-d(xl) {
+        margin-top: 23px;
+      }
+      @include b-d(md) {
+        margin-top: 10px;
+      }
     }
   }
 }

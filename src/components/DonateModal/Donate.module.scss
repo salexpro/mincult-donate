@@ -4,8 +4,15 @@
   display: grid;
   grid-row-gap: 36px;
 
+  @include b-d(md) {
+    grid-row-gap: 23px;
+  }
+
   h3 {
     text-align: center;
+    @include b-d(md) {
+      text-align: left;
+    }
   }
 
   &__cards {
@@ -17,6 +24,11 @@
     grid-template-columns: repeat(3, 1fr);
     grid-column-gap: 16px;
     margin: 24px 0;
+    @include b-d(md) {
+      grid-template-columns: 1fr;
+      grid-row-gap: 12px;
+      margin-top: 18px;
+    }
   }
 }
 
@@ -26,20 +38,34 @@
   padding: 0;
   margin: 26px 0 0;
   list-style: none;
+
+  @include b-d(md) {
+    margin-top: 18px;
+  }
 }
 
 .token {
   position: relative;
   display: grid;
-  grid-auto-flow: column;
   grid-column-gap: 20px;
   align-items: center;
   justify-content: space-between;
   min-height: 48px;
   padding: 12px 16px 12px 12px;
+  overflow: hidden;
   background: $gray-100;
   border-radius: 12px;
   transition: 300ms cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  @include b-up(md) {
+    grid-auto-flow: column;
+  }
+
+  @include b-d(md) {
+    grid-row-gap: 8px;
+    justify-content: start;
+    // width: 100%;
+    justify-items: start;
+  }
 
   &:hover,
   &:focus {
@@ -58,10 +84,21 @@
     align-items: center;
     color: $gray-700;
     text-transform: uppercase;
+    white-space: nowrap;
+    @include b-d(md) {
+      font-size: 16px;
+    }
   }
 
   &__wallet {
+    overflow: hidden;
     letter-spacing: 0.04em;
+
+    @include b-d(md) {
+      > div {
+        word-break: break-all !important;
+      }
+    }
   }
 }
 
@@ -76,15 +113,34 @@
   padding: 8px 10px;
   background-color: $gray-200;
   border-radius: 8px;
-  opacity: 0;
   transition: 300ms;
-  transform: translateX(5px);
+  @include b-up(md) {
+    opacity: 0;
+    transform: translateX(5px);
+  }
+  @include b-d(md) {
+    color: $gray-600;
+    background: none;
+
+    &:hover,
+    &:focus {
+      color: $black;
+    }
+
+    span {
+      display: none;
+    }
+  }
 }
 
 .tabs {
   margin-top: 26px;
   background: $gray-100;
   border-radius: 12px;
+
+  @include b-d(md) {
+    margin-top: 18px;
+  }
 
   &__buttons {
     display: grid;
@@ -108,6 +164,12 @@
     box-shadow: inset 0 -1px $gray-300;
     transition: 300ms;
 
+    @include b-d(md) {
+      span {
+        display: none;
+      }
+    }
+
     &.active {
       color: $black;
       box-shadow: inset 0 -2px $secondary;
@@ -117,5 +179,8 @@
   &__content {
     padding: 20px 24px;
     white-space: pre-line;
+    @include b-d(md) {
+      padding: 16px 12px;
+    }
   }
 }

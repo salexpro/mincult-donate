@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import { Button, Modal } from 'react-bootstrap'
 import cn from 'classnames'
+import MiddleEllipsis from 'react-middle-ellipsis'
 
 import Icon from '../Icon'
 
@@ -36,7 +37,7 @@ const DonateModal = (props) => {
   const handleCurr = (wallet) => setActiveCurr(wallet)
 
   return (
-    <Modal {...props} restoreFocus={false} centered>
+    <Modal {...props} fullscreen="md-down" restoreFocus={false} centered>
       <Modal.Header closeButton>
         <Modal.Title as="h2">Donate to save culture</Modal.Title>
       </Modal.Header>
@@ -73,14 +74,18 @@ const DonateModal = (props) => {
                       {token} {type && `(${type})`}
                     </span>
                   </span>
-                  <span className={s.token__wallet}>{wallet}</span>
+                  <span className={s.token__wallet}>
+                    <MiddleEllipsis>
+                      <span>{wallet}</span>
+                    </MiddleEllipsis>
+                  </span>
                   <button
                     type="button"
                     className={s.copy}
                     onClick={() => handleCopy(curr)}
                   >
                     <Icon name={copied === curr ? 'check' : 'copy'} />
-                    Copy address
+                    <span>Copy address</span>
                   </button>
                 </li>
               )
@@ -101,7 +106,7 @@ const DonateModal = (props) => {
                     onClick={() => handleCurr(account)}
                   >
                     <Icon name={symbol} size={size} />
-                    {label}
+                    <span>{label}</span>
                   </button>
                 </li>
               ))}

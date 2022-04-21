@@ -1,10 +1,24 @@
+@import '~styles/mixins';
+
 .about {
   display: grid;
-  grid-template-columns: auto 1fr;
-  grid-column-gap: 40px;
+  grid-gap: 40px;
   align-items: start;
   padding-top: 92px;
   padding-bottom: 36px;
+
+  @include b-up(xl) {
+    grid-template-columns: 560px 1fr;
+  }
+
+  @include b-d(xl) {
+    justify-items: center;
+  }
+
+  @include b-d(md) {
+    padding-top: 60px;
+    padding-bottom: 24px;
+  }
 
   &__video {
     position: relative;
@@ -14,6 +28,10 @@
     box-shadow: 0 28px 60px rgba(0, 0, 0, 10%), 0 10px 20px rgba(0, 0, 0, 20%),
       0 2px 6px rgba(0, 0, 0, 20%);
     transform: translateZ(0);
+
+    @include b-d(md) {
+      border-radius: 14px;
+    }
 
     &::after {
       position: absolute;
@@ -41,6 +59,12 @@
 
     > div {
       z-index: -1;
+    }
+  }
+
+  &__content {
+    @include b-d(xl) {
+      max-width: 700px;
     }
   }
 

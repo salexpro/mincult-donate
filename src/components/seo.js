@@ -86,7 +86,7 @@ const SEO = ({ description, lang, meta, title, image }) => {
         },
         {
           name: 'theme-color',
-          content: '#cc2028',
+          content: '#fff',
         },
       ].concat(meta)}
     >

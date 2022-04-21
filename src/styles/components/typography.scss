@@ -8,10 +8,26 @@ h2 {
 h1 {
   font-weight: 300;
   color: $red;
+  @include b-d(xl) {
+    font-size: 52px;
+    line-height: 1.077;
+  }
+
+  @include b-d(md) {
+    font-size: 36px;
+    line-height: 1.1667;
+  }
 }
 
 h2 {
   line-height: 1.2143;
+  @include b-d(xl) {
+    font-size: 31px;
+    line-height: 1.199;
+  }
+  @include b-d(md) {
+    font-size: 24px;
+  }
 }
 
 h3 {
@@ -20,11 +36,24 @@ h3 {
   line-height: 1.3914;
   color: $red;
   letter-spacing: -0.01em;
+  @include b-d(xl) {
+    font-size: 22px;
+    line-height: 1.3637;
+  }
+  @include b-d(md) {
+    font-size: 20px;
+    line-height: 1.4;
+  }
 }
 
 p {
   font-size: 18px;
   line-height: 1.4445;
+
+  @include b-d(md) {
+    font-size: 14px;
+    line-height: 1.6429;
+  }
 
   &:last-child {
     margin: 0;
@@ -34,6 +63,9 @@ p {
 small {
   font-weight: 400;
   color: $gray-600;
+  @include b-d(md) {
+    font-size: 11px;
+  }
 }
 
 strong {

@@ -16,6 +16,10 @@ button {
 
   &-lg {
     min-width: 360px;
+    font-weight: 500;
+    @include b-d(xl) {
+      min-width: 320px;
+    }
   }
 
   &-outline {

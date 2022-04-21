@@ -4,6 +4,11 @@
   padding-top: 48px;
   padding-bottom: 96px;
 
+  @include b-d(md) {
+    padding-top: 0;
+    padding-bottom: 60px;
+  }
+
   &__masonry {
     position: relative;
     z-index: 1;
@@ -19,16 +24,40 @@
       content: '';
       background-image: url('~img/sunflower.png');
       opacity: 0.2;
+      @include b-d(md) {
+        width: 512px;
+        height: 512px;
+        background-size: contain;
+      }
     }
 
     &::before {
       top: -80px;
       left: -155px;
+      @include b-d(xl) {
+        left: -234px;
+      }
+      @include b-d(lg) {
+        top: -40px;
+        left: -244px;
+      }
+      @include b-d(md) {
+        top: -122px;
+        left: -185px;
+      }
     }
 
     &::after {
       right: -17px;
       bottom: -68px;
+      @include b-d(xl) {
+        right: -234px;
+        bottom: -56px;
+      }
+      @include b-d(lg) {
+        right: -188px;
+        bottom: 90px;
+      }
     }
   }
 
@@ -39,6 +68,10 @@
     // & + & {
     //   padding-left: 40px;
     // }
+
+    @include b-d(md) {
+      grid-row-gap: 16px;
+    }
   }
 }
 
@@ -50,6 +83,26 @@
   box-shadow: 0 30px 80px rgba(0, 0, 0, 9%), 0 12px 24px rgba(0, 0, 0, 5%),
     0 2px 6px rgba(0, 0, 0, 4%);
 
+  @include b-o(lg) {
+    padding: 22px 24px 24px;
+    border-radius: 20px 20px 64px;
+  }
+
+  @include b-d(md) {
+    padding: 24px 16px 16px;
+    border-radius: 8px 8px 48px;
+  }
+
+  blockquote p {
+    &::before {
+      content: '“';
+    }
+
+    &::after {
+      content: '”';
+    }
+  }
+
   figcaption {
     display: grid;
     grid-template-areas:
@@ -57,6 +110,7 @@
       'pos photo';
     grid-template-columns: 1fr auto;
     grid-gap: 4px 24px;
+    align-items: center;
   }
 
   cite {
@@ -66,12 +120,20 @@
 
   &__position {
     grid-area: pos;
+    align-self: start;
     color: $gray-700;
+    @include b-d(md) {
+      font-size: 11px;
+    }
   }
 
   &__photo {
     grid-area: photo;
     border-radius: 50%;
     transform: translateZ(0);
+    @include b-d(md) {
+      width: 64px;
+      height: 64px;
+    }
   }
 }

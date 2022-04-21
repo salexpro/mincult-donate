@@ -1,4 +1,25 @@
 .nav {
   justify-self: end;
   margin: 0;
+
+  &--header {
+    @include b-d(xl) {
+      display: none;
+    }
+  }
+
+  &--dropdown {
+    display: grid;
+    grid-row-gap: 32px;
+    justify-items: center;
+    font-weight: 400;
+
+    @include b-d(md) {
+      font-size: 16px;
+    }
+
+    a {
+      color: $black;
+    }
+  }
 }

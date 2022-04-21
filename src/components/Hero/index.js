@@ -31,7 +31,24 @@ const Hero = () => {
           <small>Donate via bank transfers, credit cards, and crypto</small>
         </div>
         <div className={s.hero__powered}>
-          <small>The initiative is powered by</small>
+          <small>
+            The initiative is powered by
+            <span>
+              {' '}
+              the{' '}
+              <a href="https://mkip.gov.ua/" target="_blank" rel="noreferrer">
+                Ministry of Culture and Information Policy of Ukraine
+              </a>
+              , the {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
+              <a href="#" target="_blank">
+                State Agency of Ukraine for Arts and Artistic Education
+              </a>
+              , and{' '}
+              <a href="https://everstake.one" target="_blank" rel="noreferrer">
+                Everstake
+              </a>
+            </span>
+          </small>
           <img
             width="864"
             height="44"

@@ -4,7 +4,7 @@ import { Container, Modal } from 'react-bootstrap'
 import { StaticImage } from 'gatsby-plugin-image'
 import * as s from './About.module.scss'
 
-import cover from './img/cover.jpg'
+import cover from './img/cover-min.jpg'
 
 const About = () => {
   const { site } = useStaticQuery(graphql`
@@ -26,14 +26,14 @@ const About = () => {
       <Container id="why" className={s.about}>
         <button type="button" className={s.about__video} onClick={handleVideo}>
           <StaticImage
-            src="./img/cover.jpg"
+            src="./img/cover-min.jpg"
             alt="Video cover"
-            width={560}
+            width={700}
             quality="100"
             placeholder="tracedSVG"
           />
         </button>
-        <div>
+        <div className={s.about__content}>
           Ukrainian culture has a thousand-year history. russia&apos;s
           full-scale invasion on the sovereign territory of peaceful Ukraine
           brings more and more devastation to the world cultural heritage and
@@ -60,6 +60,7 @@ const About = () => {
         onHide={() => setModalShow(false)}
         size="lg"
         centered
+        className="modal--video"
       >
         <div className={s.about__modal}>
           <iframe

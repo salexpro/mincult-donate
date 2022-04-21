@@ -8,10 +8,25 @@
   // --swiper-pagination-bullet-opacity: 1;
   --swiper-pagination-bullet-horizontal-gap: 8px;
   // --swiper-pagination-bullet-vertical-gap: 6px;
+
+  @include b-d(md) {
+    --swiper-pagination-bullet-width: 8px;
+    --swiper-pagination-bullet-height: 8px;
+    --swiper-pagination-bullet-horizontal-gap: 4px;
+  }
 }
 
 .swiper {
   padding-bottom: 104px;
+
+  @include b-d(md) {
+    padding-bottom: 92px;
+  }
+
+  &-wrapper {
+    display: grid;
+    grid-auto-flow: column;
+  }
 
   &-pagination {
     display: grid;
@@ -20,6 +35,9 @@
 
     &.swiper-pagination-horizontal {
       bottom: 48px;
+      @include b-d(md) {
+        bottom: 60px;
+      }
     }
 
     &-bullet {
@@ -43,21 +61,32 @@
         rgba($white, 50%) 68.75%,
         rgba($white, 0%) 100%
       );
+      @include b-d(xl) {
+        width: 200px;
+      }
+      @include b-d(md) {
+        display: none;
+      }
     }
 
     &-prev {
       left: 0;
+      transform: scaleX(-1);
       @include b-d(xxxl) {
         left: -176px;
       }
-
-      transform: scaleX(-1);
+      @include b-d(xl) {
+        left: -120px;
+      }
     }
 
     &-next {
       right: 0;
       @include b-d(xxxl) {
         right: -176px;
+      }
+      @include b-d(xl) {
+        right: -120px;
       }
     }
   }

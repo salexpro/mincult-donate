@@ -2,6 +2,7 @@
 
 .footer {
   overflow: hidden;
+  text-align: center;
 
   &::before {
     display: block;
@@ -11,6 +12,11 @@
     background-repeat: repeat-x;
     background-position: bottom center;
     background-size: 102px 93px;
+
+    @include b-d(md) {
+      height: 44px;
+      background-size: 48px 44px;
+    }
   }
 
   &__top {
@@ -20,6 +26,16 @@
     justify-items: center;
     padding-top: 154px;
     padding-bottom: 192px;
+
+    @include b-d(lg) {
+      padding-top: 98px;
+    }
+
+    @include b-d(md) {
+      grid-row-gap: 25px;
+      padding-top: 112px;
+      padding-bottom: 106px;
+    }
 
     &::before,
     &::after {
@@ -34,19 +50,55 @@
     &::before {
       right: calc(50% + 150px + 93px);
       background-image: url('~img/building-left-min.jpg');
+      @include b-d(xl) {
+        right: calc(50% + 140px);
+      }
+      @include b-d(lg) {
+        right: calc(50% + 110px);
+      }
+      @include b-d(md) {
+        left: calc(50% - 310px);
+        width: 554px;
+        background-repeat: no-repeat;
+        background-position: top center;
+        background-size: contain;
+        opacity: 0.7;
+      }
     }
 
     &::after {
       left: calc(50% + 150px + 93px);
       background-image: url('~img/building-right-min.jpg');
+      @include b-d(xl) {
+        left: calc(50% + 140px);
+      }
+      @include b-d(xl) {
+        left: calc(50% + 110px);
+      }
+      @include b-d(md) {
+        display: none;
+      }
+    }
+  }
+
+  &__lead {
+    @include b-d(xl) {
+      max-width: 640px;
+      margin: 0 auto 10px;
+    }
+    @include b-d(md) {
+      margin-bottom: 29px;
     }
   }
 
   &__hint {
     margin-top: -20px;
-    font-size: 13px;
     font-weight: 400;
     color: $gray-600;
+
+    @include b-d(md) {
+      margin-top: -9px;
+    }
   }
 
   &__bottom {
@@ -57,6 +109,12 @@
     padding-top: 40px;
     padding-bottom: 35px;
 
+    @include b-d(md) {
+      grid-row-gap: 28px;
+      padding-top: 28px;
+      padding-bottom: 24px;
+    }
+
     &::before {
       position: absolute;
       top: 0;
@@ -66,15 +124,41 @@
       content: '';
       border-bottom: 1px solid $gray-300;
       transform: translateX(-50%);
+      @include b-d(xl) {
+        width: calc(100% - 120px);
+      }
+      @include b-d(lg) {
+        width: calc(100% - 80px);
+      }
+      @include b-d(md) {
+        width: calc(100% - 32px);
+      }
     }
   }
 
   &__logos {
     display: grid;
-    grid-auto-flow: column;
     grid-column-gap: 60px;
     align-items: center;
     color: $gray-600;
+    @include b-d(lg) {
+      grid-template-columns: 3fr 9fr 5fr;
+      grid-column-gap: 40px;
+      justify-items: center;
+      width: 100%;
+
+      svg {
+        width: auto;
+        max-width: 100%;
+      }
+    }
+    @include b-up(md) {
+      grid-auto-flow: column;
+    }
+    @include b-d(md) {
+      grid-template-columns: auto;
+      grid-row-gap: 25px;
+    }
   }
 
   &__menu {
@@ -86,6 +170,17 @@
     font-size: 13px;
     color: $gray-600;
     list-style: none;
+    @include b-d(lg) {
+      display: flex;
+      flex-wrap: wrap;
+      grid-gap: 12px 32px;
+      justify-content: center;
+    }
+
+    @include b-d(md) {
+      grid-row-gap: 16px;
+      font-size: 11px;
+    }
 
     a {
       color: $gray-600;

@@ -9,7 +9,7 @@ import ScrollToPlugin from 'gsap/ScrollToPlugin'
 
 import MENU from './constants'
 
-const Menu = ({ variant }) => {
+const Menu = ({ variant, handleClose }) => {
   const location = useLocation()
   const isHomepage = location.pathname === withPrefix('/')
 
@@ -17,6 +17,7 @@ const Menu = ({ variant }) => {
 
   const handleScroll = (e, link) => {
     e.preventDefault()
+    if (handleClose) handleClose()
     gsap.to(window, { scrollTo: link, ease: 'power2' })
   }
 

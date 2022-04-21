@@ -17,7 +17,7 @@ const Footer = () => {
     <footer className={s.footer}>
       <Container className={s.footer__top}>
         <h2 className="h1">Help Save Ukrainian Culture</h2>
-        <p>
+        <p className={s.footer__lead}>
           Help salvage Ukrainian holdings and ensure they are renovated once the
           war is over. Make a donation today
         </p>
@@ -25,9 +25,9 @@ const Footer = () => {
           Save world heritage
           <Icon name="btc" />
         </Button>
-        <span className={s.footer__hint}>
+        <small className={s.footer__hint}>
           Donate via bank transfers, credit cards, and crypto
-        </span>
+        </small>
       </Container>
 
       <Container className={s.footer__bottom}>
@@ -39,7 +39,7 @@ const Footer = () => {
         <ul className={s.footer__menu}>
           <li>
             © {currentYear} Powered by{' '}
-            <a href="https://everstake.one/" target="_blank" rel="noreferrer">
+            <a href="https://everstake.one" target="_blank" rel="noreferrer">
               Everstake
             </a>
           </li>
@@ -51,7 +51,7 @@ const Footer = () => {
           </li>
           <li>
             Design by{' '}
-            <a href="https://dnlv.design/" target="_blank" rel="noreferrer">
+            <a href="https://dnlv.design" target="_blank" rel="noreferrer">
               Andrew Danilov
             </a>
           </li>

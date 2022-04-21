@@ -10,6 +10,21 @@
   padding-top: 40px;
   padding-bottom: 40px;
 
+  @include b-d(xl) {
+    column-gap: 30px;
+  }
+
+  @include b-d(lg) {
+    grid-template-columns: repeat(2, auto);
+    justify-content: space-between;
+    min-height: 80px;
+  }
+
+  @include b-d(md) {
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+
   &::after {
     position: absolute;
     bottom: 0;
@@ -19,12 +34,106 @@
     content: '';
     border-bottom: 1px solid $gray-300;
     transform: translateX(-50%);
+
+    @include b-d(xl) {
+      width: calc(100% - 120px);
+    }
+
+    @include b-up(lg) {
+      z-index: 1046;
+    }
+
+    @include b-d(lg) {
+      width: calc(100% - 80px);
+    }
+
+    @media screen and (orientation: portrait) {
+      z-index: 1046;
+    }
+    @include b-d(md) {
+      width: calc(100% - 32px);
+    }
+  }
+
+  &__button {
+    justify-self: end;
+    @include b-d(lg) {
+      display: none;
+    }
   }
 
   &__logo {
+    z-index: 1046;
     // margin-right: auto;
+    @include b-d(lg) {
+      max-width: 98px;
+    }
   }
-  @include b-d(sm) {
-    // Code...
+}
+
+.hamb {
+  z-index: 1046;
+  width: 40px;
+  height: 40px;
+  margin-right: -9px;
+  @include b-up(xl) {
+    display: none;
+  }
+
+  &:focus {
+    outline: none;
+  }
+
+  &__icon {
+    fill: none;
+    transition: 400ms;
+    transform: rotate(0);
+  }
+
+  &__line {
+    fill: none;
+    stroke: $gray-800;
+    stroke-dashoffset: 0;
+    stroke-linecap: square;
+    stroke-width: 5.5;
+    transition: stroke-dasharray 400ms, stroke-dashoffset 400ms;
+
+    &_top {
+      stroke-dasharray: 40 160;
+    }
+
+    &_middle {
+      stroke-dasharray: 40 142;
+      transition: transform 400ms;
+      transform-origin: 50%;
+    }
+
+    &_bottom {
+      stroke-dasharray: 40 85;
+      // transition: transform 400ms, stroke-dashoffset 400ms;
+      transform-origin: 50%;
+    }
+  }
+
+  &[aria-expanded='true'] {
+    .hamb {
+      &__icon {
+        transform: rotate(45deg);
+      }
+
+      &__line {
+        &_top {
+          stroke-dashoffset: -64px;
+        }
+
+        &_middle {
+          transform: rotate(90deg);
+        }
+
+        &_bottom {
+          stroke-dashoffset: -64px;
+        }
+      }
+    }
   }
 }

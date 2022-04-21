@@ -52,14 +52,15 @@ const Culture = () => {
       </Container>
       <Swiper
         modules={[Autoplay, Navigation, Pagination]}
-        spaceBetween={48}
         slidesPerView="auto"
         centeredSlides
         speed={2000}
         pagination={{
           clickable: true,
         }}
+        spaceBetween={12}
         // loop
+        setWrapperSize
         rewind
         autoplay={{
           delay: 5000,
@@ -68,12 +69,23 @@ const Culture = () => {
         }}
         navigation
         initialSlide={1}
+        breakpoints={{
+          640: {
+            spaceBetween: 32,
+          },
+          1024: {
+            spaceBetween: 40,
+          },
+          1240: {
+            spaceBetween: 48,
+          },
+        }}
         className={s.carousel}
       >
         {data.allCarouselJson.edges.map(
           ({ node: { title, descr, photo, images } }) => (
             <SwiperSlide className={s.carousel__item} key={title}>
-              <div className={s.carousel__container}>
+              <div className={cn(s.carousel__content, { [s.photo]: photo })}>
                 {photo && (
                   <GatsbyImage
                     image={{
@@ -86,13 +98,11 @@ const Culture = () => {
                     className={s.carousel__photo}
                   />
                 )}
-                <div className={s.carousel__content}>
-                  <h3 className={cn('h1', s.carousel__header)}>{title}</h3>
-                  <div
-                    className={s.carousel__descr}
-                    dangerouslySetInnerHTML={{ __html: descr }}
-                  />
-                </div>
+                <h3 className={cn('h1', s.carousel__header)}>{title}</h3>
+                <div
+                  className={s.carousel__descr}
+                  dangerouslySetInnerHTML={{ __html: descr }}
+                />
               </div>
 
               <div className={s.carousel__images}>
@@ -114,7 +124,6 @@ const Culture = () => {
             </SwiperSlide>
           )
         )}
-        button
       </Swiper>
     </section>
   )
