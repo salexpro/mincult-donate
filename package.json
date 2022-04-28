@@ -62,7 +62,7 @@
     "eslint-plugin-react-hooks": "4.4.0",
     "gatsby-plugin-webpack-bundle-analyser-v2": "1.1.27",
     "husky": "7.0.4",
-    "nano-staged": "0.7.0",
+    "nano-staged": "0.8.0",
     "prettier": "2.6.2",
     "stylelint": "14.7.1",
     "stylelint-config-prettier": "9.0.3",
