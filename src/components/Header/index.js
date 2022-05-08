@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import { useLocation } from '@gatsbyjs/reach-router'
 import { Container, Button, Offcanvas } from 'react-bootstrap'
 import PropTypes from 'prop-types'
 import cn from 'classnames'
@@ -19,7 +20,10 @@ const Header = ({ siteTitle }) => {
 
   const handleMenu = () => setMenuOpen((prev) => !prev)
 
-  const [modalShow, setModalShow] = useState(null)
+  const location = useLocation()
+  const params = new URLSearchParams(location.search)
+
+  const [modalShow, setModalShow] = useState(!!params.get('donate'))
 
   const handleDonate = () => setModalShow(true)
 
