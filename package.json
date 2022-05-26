@@ -32,7 +32,7 @@
     "gatsby-transformer-json": "4.14.0",
     "gatsby-transformer-sharp": "4.14.0",
     "gsap": "3.10.4",
-    "i18next": "21.8.3",
+    "i18next": "21.8.4",
     "prop-types": "15.8.1",
     "react": "18.1.0",
     "react-bootstrap": "2.4.0",
