@@ -32,6 +32,10 @@ const DATA = {
         type: 'trc-20',
         wallet: 'TFc9GzkEK3dz9aB8K3pxxGuDPAGHZBzQqt',
       },
+      {
+        token: 'mina',
+        wallet: 'B62qkCh3K7NTeoWXqKkwD5U4sCRBcvvRxYUaefsHn34UhxkHY39ohmp',
+      },
     ],
   },
   bank: {
