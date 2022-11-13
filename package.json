@@ -17,7 +17,7 @@
     "@svgr/webpack": "6.5.1",
     "bootstrap": "5.2.2",
     "classnames": "2.3.2",
-    "gatsby": "5.0.0",
+    "gatsby": "5.0.1",
     "gatsby-plugin-google-gtag": "5.0.0",
     "gatsby-plugin-image": "3.0.0",
     "gatsby-plugin-minify-classnames": "4.1.3",
