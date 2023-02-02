@@ -42,7 +42,7 @@
     "react-middle-ellipsis": "1.2.2",
     "sass": "1.57.1",
     "svg-parser": "2.0.4",
-    "swiper": "8.4.6"
+    "swiper": "8.4.7"
   },
   "devDependencies": {
     "@commitlint/cli": "17.4.2",
