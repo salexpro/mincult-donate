@@ -1,7 +1,7 @@
 import React from 'react'
 import { useStaticQuery, graphql } from 'gatsby'
 import { Container } from 'react-bootstrap'
-import { Autoplay, Pagination, Navigation } from 'swiper'
+import { Autoplay, Pagination, Navigation } from 'swiper/modules'
 import { Swiper, SwiperSlide } from 'swiper/react'
 import { GatsbyImage } from 'gatsby-plugin-image'
 import cn from 'classnames'
