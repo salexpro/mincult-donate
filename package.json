@@ -12,7 +12,7 @@
   ],
   "dependencies": {
     "@gvrs/gatsby-transformer-blurhash": "2.0.0",
-    "@percy/cli": "1.27.1",
+    "@percy/cli": "1.27.2",
     "@svgr/webpack": "8.1.0",
     "bootstrap": "5.2.3",
     "classnames": "2.3.2",
