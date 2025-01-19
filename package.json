@@ -30,7 +30,7 @@
     "gatsby-theme-i18n-react-i18next": "3.0.0",
     "gatsby-transformer-json": "5.13.0",
     "gatsby-transformer-sharp": "5.13.0",
-    "gsap": "3.12.5",
+    "gsap": "3.12.7",
     "i18next": "23.7.12",
     "prop-types": "15.8.1",
     "react": "18.3.1",
